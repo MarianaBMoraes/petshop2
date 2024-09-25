@@ -1,0 +1,20 @@
+Criar um petshop com a autenticação de usuário, onde o usuário nvl "ADM" tenha acesso a tudo, o usuário com nvl de "REC" tenha acesso a criar e editar os cruds, e o usuário do tipo "TOSA" tenha acesso somente as listas.
+
+
+usuario {
+nome,
+email
+senha
+permissao [ADM, REC, TOSA]
+}
+
+agendamento { 
+data,
+hora,
+id_animal
+}
+
+animal {
+nome,
+raca,
+}
