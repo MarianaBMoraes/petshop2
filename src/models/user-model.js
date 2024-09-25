@@ -6,10 +6,18 @@ const userSchema = new db.Schema({
     type: String,
     required: true,
   },
+  endereco: {
+    type: Object,
+    required: true,
+  },
   email: {
     type: String,
-    required: true,
-    unique: true,
+    validate: {
+      validator: function (v) {
+        return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(v);
+      },
+    },
+    required: true, 
   },
   password: {
     type: String,
@@ -18,13 +26,13 @@ const userSchema = new db.Schema({
   },
   permissão: {
     type: String,
-    enum: ["ADM", "REC", "TOSA"],
+    enum: ["ADM", "REC", "TOSA", "USU"],
     required: true,
     default: "TOSA",
   },
 });
 
-// não precisa do next nas versões mais novas do mongoose
+
 userSchema.pre("save", async function () {
   // if (this.password !== this.confirmar_password) {} // Da pra deixar essa validação só no front
 

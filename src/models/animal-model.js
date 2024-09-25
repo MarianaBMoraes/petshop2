@@ -8,6 +8,12 @@ const animalSchema = new db.Schema({
   raca: {
     type: String,
     required: true,
+  },
+  especie: {
+    type: String , 
+    enum: ["GOLDEN", "LABRADOR", "LHASA", "LULU", "DAMALTA", "HUSKI", "SRD"],
+    required: true,
+    default: "SRD",
   }
 });
 

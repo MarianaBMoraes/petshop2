@@ -9,9 +9,14 @@ const agendamentoSchema = new db.Schema({
     type: String,
     required: true,
   },
-  id_animal: {
+  animal_id: {
     type: String,
     ref: "Animal",
+    required: true,
+  },
+  user_id: {
+    type: db.Schema.Types.ObjectId,
+    ref: "User",
     required: true,
   },
 });
