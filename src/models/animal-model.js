@@ -11,9 +11,9 @@ const animalSchema = new db.Schema({
   },
   especie: {
     type: String , 
-    enum: ["GOLDEN", "LABRADOR", "LHASA", "LULU", "DAMALTA", "HUSKI", "SRD"],
+    enum: ["cachorro", "gato", "passarinho"],
     required: true,
-    default: "SRD",
+    default: "cachorro",
   }
 });
 

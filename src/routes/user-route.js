@@ -12,6 +12,7 @@ import {
 
 import check_token from "../middleware/check_token.js";
 import check_role from "../middleware/check_role.js";
+import cep_endereco from "../middleware/cep_endereco.js";
 
 const router = Router();
 
@@ -21,7 +22,7 @@ tanto faz o nivel de acesso
 
 Onde está o check_role ai depende do nivel de acesso
 */
-router.post("/", check_token, check_role(["ADM", "REC"]), store); // Somente adm
+router.post("/", cep_endereco, check_token, check_role(["ADM", "REC"]), store); // Somente adm
 router.get("/", check_token, check_role(["ADM", "REC", "TOSA"]), index); // Somente usuário
 router.get("/:id", check_token, check_role(["ADM", "REC", "TOSA"]), show);
 router.put("/:id", check_token, check_role(["ADM", "REC"]), update);

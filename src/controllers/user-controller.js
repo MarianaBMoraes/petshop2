@@ -52,6 +52,8 @@ export const destroy = async (req, res) => {
 export const signup = async (req, res) => {
   try {
     const user = await User.create({
+      nome: req.body.nome, 
+      permissao: req.body.permissao,
       email: req.body.email,
       password: req.body.password,
     });

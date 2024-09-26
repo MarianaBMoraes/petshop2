@@ -8,7 +8,7 @@ const userSchema = new db.Schema({
   },
   endereco: {
     type: Object,
-    required: true,
+    required: false,
   },
   email: {
     type: String,
@@ -18,6 +18,7 @@ const userSchema = new db.Schema({
       },
     },
     required: true, 
+    unique: true
   },
   password: {
     type: String,
