@@ -25,7 +25,7 @@ const userSchema = new db.Schema({
     required: true,
     minLength: 5,
   },
-  permissão: {
+  permissao: {
     type: String,
     enum: ["ADM", "REC", "TOSA", "USU"],
     required: true,
